@@ -1,0 +1,152 @@
+/* ================================ */
+/* ESTILOS ESPECÍFICOS DEL HOME     */
+/* ================================ */
+
+/* Estilos para centrar el título y header fade */
+.centered-title {
+  text-align: center !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 100% !important;
+}
+
+/* Header fade effect - funciona con el scroll */
+.header-fade {
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  z-index: 10;
+}
+
+/* El header principal siempre visible */
+ion-header:not([collapse]) {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+/* Header collapse solo aparece al hacer scroll hacia arriba */
+ion-header[collapse="condense"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9;
+}
+
+/* Mejorar el header collapse */
+ion-header.header-collapse-condense ion-toolbar {
+  --background: var(--ion-color-primary);
+}
+
+ion-header.header-collapse-condense .centered-title {
+  font-size: 1.8em !important;
+  font-weight: 700;
+}
+
+/* Asegurar que el contenido tenga padding correcto */
+ion-content {
+  --padding-top: 0px;
+}
+
+/* Estilos adicionales para el header que se oculta al hacer scroll */
+.header-scroll {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+.header-visible {
+  transform: translateY(0) !important;
+}
+
+.header-hidden {
+  transform: translateY(-100%) !important;
+}
+
+/* Asegurar que el contenido del scroll tenga el espacio correcto */
+.scroll-content {
+  --padding-top: 56px; /* Altura aproximada del header */
+}
+
+/* En fullscreen, ajustar el padding */
+ion-content.scroll-content {
+  --padding-top: 0;
+  margin-top: 56px; /* Espacio para el header fijo */
+}
+
+/* Asegurar que el contenido tenga el padding correcto */
+.content-with-header {
+  padding-top: 20px;
+  margin-top: 0;
+}
+
+/* Chip de filtros activos */
+.active-filters-chip {
+  --background: rgba(255, 255, 255, 0.9);
+  --color: #667eea;
+  font-size: 12px;
+  font-weight: 600;
+  height: 32px;
+  margin-left: 8px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  animation: pulse-filter 2s infinite;
+}
+
+@keyframes pulse-filter {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.9; }
+}
+
+.result-count {
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.category-info, .search-info {
+  color: #8b5cf6;
+  font-weight: 500;
+}
+
+.search-info {
+  font-style: italic;
+}
+
+/* ================================ */
+/* RESPONSIVE DESIGN                */
+/* ================================ */
+
+/* Responsive para el título */
+@media (max-width: 768px) {
+  .centered-title {
+    font-size: 1.2em;
+  }
+  
+  ion-header.header-collapse-condense .centered-title {
+    font-size: 1.5em !important;
+  }
+  
+  .header-scroll {
+    transition: transform 0.25s ease-out;
+  }
+  
+  .scroll-content {
+    margin-top: 44px; /* Altura menor en móviles */
+  }
+}
+
+@media (max-width: 480px) {
+  .centered-title {
+    font-size: 1.1em;
+  }
+  
+  ion-header.header-collapse-condense .centered-title {
+    font-size: 1.3em !important;
+  }
+}

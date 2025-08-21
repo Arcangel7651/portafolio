@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">tienda-stockapp</string>
+    <string name="title_activity_main">tienda-stockapp</string>
+    <string name="package_name">com.tienda.app</string>
+    <string name="custom_url_scheme">com.tienda.app</string>
+</resources>

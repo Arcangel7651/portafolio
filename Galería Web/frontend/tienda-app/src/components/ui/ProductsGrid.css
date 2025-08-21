@@ -1,0 +1,32 @@
+/* ================================ */
+/* ESTILOS DE PRODUCTS GRID         */
+/* ================================ */
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+  padding: 20px 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ================================ */
+/* RESPONSIVE DESIGN                */
+/* ================================ */
+
+@media (max-width: 480px) {
+  .cards-container {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 16px 12px;
+  }
+}
+
+@media (min-width: 768px) {
+  .cards-container {
+    gap: 24px;
+    padding: 32px 20px;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  }
+}

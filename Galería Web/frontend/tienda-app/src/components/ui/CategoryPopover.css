@@ -1,0 +1,36 @@
+/* ================================ */
+/* ESTILOS DE CATEGORY POPOVER      */
+/* ================================ */
+
+.filtro-categoria {
+  margin-bottom: 16px;
+}
+
+.categoria-list {
+  background: transparent;
+  margin: 0;
+  padding: 0;
+}
+
+.categoria-list ion-item {
+  --background: transparent;
+  --color: #374151;
+  --border-color: rgba(0, 0, 0, 0.05);
+  --inner-padding-start: 12px;
+  --inner-padding-end: 12px;
+  --min-height: 48px;
+  border-radius: 8px;
+  margin-bottom: 4px;
+  transition: all 0.2s ease;
+}
+
+.categoria-list ion-item:hover {
+  --background: rgba(139, 92, 246, 0.05);
+  transform: translateX(4px);
+}
+
+.categoria-list ion-item.selected-item {
+  --background: rgba(139, 92, 246, 0.1);
+  --color: #8b5cf6;
+  border: 1px solid rgba(139, 92, 246, 0.2);
+}
